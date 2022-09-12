@@ -1,6 +1,6 @@
 export function makePage(project) {
   const container = document.createElement('div');
-  container.classList.add(project.name);
+  container.classList.add('container');
 
   const title = document.createElement('h1');
   title.classList.add(project.name);  

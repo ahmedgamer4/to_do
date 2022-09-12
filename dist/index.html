@@ -10,6 +10,28 @@
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-u1OknCvxWvY5kfmNBILK2hRnQC3Pr17a+RTT6rIHI7NnikvbZlHgTPOOmMi466C8" crossorigin="anonymous" defer></script>
 </head>
 <body>
+  <div id="popup" class="popup hidden">
+    <form>
+      <div class="form-head"> 
+        <div class="heading">Create a new...</div>
+        <button type="button" id="close" class="btn-close btn-close-white" aria-label="Close"></button>
+      </div> 
+      <div class="content">
+        <div class="side-content">
+          <div>
+            <div id="side-todo">To Do</div>
+          </div>
+        </div>
+        <div class="form-main">
+          <textarea name="title" id="title" cols="30" placeholder="Title: Make lunch" rows="1" ></textarea>
+          <textarea name="details" id="details" cols="30" rows="10" placeholder="Details: ..."></textarea>
+          <div class="buttons-wrapper">
+            <button class="submit" type="button" id="submit">ADD TO DO</button>
+          </div>
+        </div>
+      </div>     
+    </form>
+  </div>
   <header>
     <div class="logo">TODO</div>
   </header>
