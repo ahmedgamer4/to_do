@@ -28,8 +28,8 @@ export function makePage(project) {
 }
 
 export function addTask(project) {
-  const taskTitle = document.getElementById('title');
-  const taskDetails = document.getElementById('details');
+  const taskTitle = document.getElementById('title').value;
+  const taskDetails = document.getElementById('details').value;
 
   let task = new Task(taskTitle, taskDetails);
 

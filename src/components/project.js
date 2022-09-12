@@ -6,15 +6,14 @@ export class Project {
     this.tasksList = [];
   }
 
-  removeTask(task) {
-    this.tasksList.splice(this.tasksList.indexOf(task), 1);
-  }
-
   addTask(task) {
     this.tasksList.push(task);
   }
 
   showTasks() {
+    const tasksPlace = document.querySelector('.tasks-place');
+    tasksPlace.textContent = '';
+
     for (let item of this.tasksList) {
       const task_container = document.createElement('div');
       task_container.classList.add('task');
@@ -47,7 +46,7 @@ export class Project {
       tasksPlace.appendChild(task_container);
   
       checkbox.onchange = e => {
-        this.removeTask(item);
+        this.tasksList.splice(this.tasksList.indexOf(item), 1);
         this.showTasks();
       }
     }

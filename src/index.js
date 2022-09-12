@@ -5,7 +5,7 @@ import { makePage, addTask } from './components/helpers'
 
 let projectsList = new ProjectsList();
 let inbox = new Project('inbox');
-let current_page = inbox;
+let current_page;
 projectsList.addProject(inbox);
 const inbox_btn = document.getElementById('inbox-button');
 const popup = document.querySelector('.popup');
@@ -14,6 +14,7 @@ const main = document.getElementById('main');
 const projectsPlace = document.querySelector('.project-place');
 const projectBtn = document.querySelector('.add-project');
 const add_btn = document.getElementById('submit');
+const tasksPlace = document.querySelector('.tasks-place');
 
 function load(project) {
   main.textContent = '';
@@ -40,14 +41,15 @@ function projectToList() {
   project.addEventListener('click', e => {
     load(projectItem);
     current_page = projectItem;
+    projectItem.showTasks();
   });
 
   projectsPlace.appendChild(project);
 }
 
 inbox_btn.onclick = () => {
-  load(inbox);
-  current_page = 'inbox';
+  current_page = inbox;
+  load(inbox); 
 }
 
 close.addEventListener('click', () => {
