@@ -1,3 +1,5 @@
+import { Task } from "./task";
+
 export function makePage(project) {
   const container = document.createElement('div');
   container.classList.add('container');
@@ -25,6 +27,12 @@ export function makePage(project) {
   return container;
 }
 
-export function addTask(project, task) {
-  project.addTask(task);
+export function addTask(project) {
+  const taskTitle = document.getElementById('title');
+  const taskDetails = document.getElementById('details');
+
+  let task = new Task(taskTitle, taskDetails);
+
+  project.tasksList.push(task);
 }
+
