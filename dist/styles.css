@@ -1,0 +1,82 @@
+:root {
+  --blue-sky: #788BFF;
+  --main-color: #FFFFFF;
+  --second-blue: #DEE3FF;
+  --light-one: #e9ecff;
+  --form-hfont: 20px;
+  --form-cfont: 15px;
+  --h-big: clamp(20px, 3vw, 37px);
+  --button-font: clamp(10px, 3vw, 17px);
+  --buton-width: clamp(20px, 3vw, 100px);
+  --padding-header: clamp(7px, 20px, 30px)
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+  display: grid;
+  grid-template: auto 1fr auto / auto 1fr;
+  height: 100vh;
+  background-color: var(--main-color);
+}
+
+header {
+  background-color: var(--blue-sky);
+  grid-column: 1/3;
+  grid-row: 1/2;
+  padding: 20px;
+}
+
+.logo {
+  font-size: var(--h-big);
+  font-weight: 1000;
+  color: var(--main-color);
+  letter-spacing: 1px;
+}
+
+main {
+  background-color: var(--main-color);
+  grid-row: 2/3;
+  grid-column: 2/3;
+}
+
+nav {
+  background-color: var(--second-blue);
+  grid-row: 2/3;
+  grid-column: 1/2;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 15px;
+}
+
+#index-button {
+  width: clamp(50px, 10vw, 100px);
+  height: clamp(20px, 37px, 50px);
+  border-radius: 5px;
+  border: none;
+  background-color: transparent;
+  font-size: var(--button-font);
+  cursor: pointer;
+}
+
+#index-button:hover {
+  background-color: var(--light-one);
+}
+
+.bottom-sec h3 {
+  font-size: var(--padding-header);
+}
+
+footer {
+  background-color: var(--blue-sky);
+  grid-row: 3/4;
+  grid-column: 1/3;
+  padding: 20px;
+}
