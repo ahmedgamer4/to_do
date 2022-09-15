@@ -1,7 +1,9 @@
 import { ProjectsList } from "./components/project";
 import { loadInbox } from './components/inbox';
 import { Project } from './components/project';
-import { makePage, addTask } from './components/helpers'
+import { makePage, addTask } from './components/helpers';
+import Storage from './components/storage';
+
 
 let projectsList = new ProjectsList();
 let inbox = new Project('inbox');

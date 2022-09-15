@@ -1,6 +1,7 @@
 import { Task } from "./task";
 import format from "date-fns/format";
 import setDate from "./helpers";
+import Storage from "./storage";
 
 export class Project {
   constructor(name) {
@@ -10,6 +11,10 @@ export class Project {
 
   addTask(task) {
     this.tasksList.push(task);
+  }
+
+  removeTask(task) {
+    this.tasksList.splice(this.tasksList.indexOf(task), 1);
   }
 
   showTasks() {
@@ -49,7 +54,7 @@ export class Project {
       tasksPlace.appendChild(task_container);
   
       checkbox.onchange = e => {
-        this.tasksList.splice(this.tasksList.indexOf(item), 1);
+        this.removeTask(item); 
         this.showTasks();
       }
     }
@@ -65,10 +70,12 @@ export class ProjectsList {
 
   removeProject(project) {
     this.list.splice(this.list.indexOf(project), 1);
+    Storage.removeProject(project);
   }
 
   addProject(project) {
     this.list.push(project);
+    Storage.saveProject(project)
   }
 }
 
