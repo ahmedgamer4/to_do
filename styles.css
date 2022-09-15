@@ -184,11 +184,22 @@ footer {
   align-items: center;
 }
 
+.form-main {
+  display: flex;
+  flex-direction: column;
+}
+
 .content textarea {
   padding: 10px;
   border: none;
   outline: none;
   resize: none;
+}
+
+.buttons-wrapper {
+  display: flex;
+  justify-content: space-between;
+  padding: 3px;
 }
 
 .submit {
@@ -197,6 +208,7 @@ footer {
   border: none;
   border-radius: 5px;
   padding: 5px;
+  width: clamp(60px, 7vw, 100px);
 }
 
 .hidden {
