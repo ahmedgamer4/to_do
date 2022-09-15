@@ -50,6 +50,7 @@ function projectToList() {
 inbox_btn.onclick = () => {
   current_page = inbox;
   load(inbox); 
+  inbox.showTasks();
 }
 
 close.addEventListener('click', () => {

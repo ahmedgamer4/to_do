@@ -1,4 +1,6 @@
 import { Task } from "./task";
+import format from "date-fns/format";
+import setDate from "./helpers";
 
 export class Project {
   constructor(name) {
@@ -34,7 +36,8 @@ export class Project {
       const date = document.createElement('input');
       date.type = 'date';
       date.classList.add('dateInput');
-  
+      date.value = item.dueDate;
+
   
       const details = document.createElement('div');
       details.classList.add('task-details');
@@ -52,6 +55,8 @@ export class Project {
     }
   }
 }
+
+
 
 export class ProjectsList {
   constructor() {

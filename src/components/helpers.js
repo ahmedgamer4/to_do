@@ -1,4 +1,5 @@
 import { Task } from "./task";
+import format from "date-fns/format";
 
 export function makePage(project) {
   const container = document.createElement('div');
@@ -30,9 +31,11 @@ export function makePage(project) {
 export function addTask(project) {
   const taskTitle = document.getElementById('title').value;
   const taskDetails = document.getElementById('details').value;
+  const dueDate = document.getElementById('date').value;
 
-  let task = new Task(taskTitle, taskDetails);
+  let task = new Task(taskTitle, taskDetails, dueDate);
 
   project.tasksList.push(task);
 }
+
 
